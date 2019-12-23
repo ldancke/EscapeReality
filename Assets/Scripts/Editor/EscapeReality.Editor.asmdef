@@ -1,0 +1,16 @@
+{
+    "name": "EscapeReality.Editor",
+    "references": [
+        "GUID:81b80df976d372049a274b7c2ee7d008"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}
