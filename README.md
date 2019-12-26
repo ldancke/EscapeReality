@@ -9,6 +9,6 @@
 ### Teleportation
 
 There are two types of teleportation available. `Teleport Point` and `Teleport Area`.
-A `TeleportPoint` prefab provided in the SteamVR package. For the `Teleport Area` add the `Teleport Area` component
+A `TeleportPoint` prefab is provided in the SteamVR package. For the `Teleport Area` add the `Teleport Area` component
 to the desired GameObject.
 
