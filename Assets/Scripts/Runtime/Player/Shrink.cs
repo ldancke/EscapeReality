@@ -16,11 +16,10 @@ namespace EscapeReality.Player
         }
 
 #pragma warning disable CS0649
-        [SerializeField, Range(0.01f, 1f)]
+        [SerializeField, Range(0.1f, 1f)]
         private float factor;
         [SerializeField]
         private float speed;
-        [SerializeField]
         private float sqrThreshold;
         private Status status;
 #pragma warning restore CS0649
@@ -28,6 +27,7 @@ namespace EscapeReality.Player
         private void Awake()
         {
             this.status = Status.Normal;
+            this.sqrThreshold = 0.00001f;
         }
 
         private void Update()
@@ -53,10 +53,10 @@ namespace EscapeReality.Player
             if (this.status == Status.Shrinking)
                 target *= this.factor;
 
-            transform.localScale =  Vector3.Lerp(transform.localScale, target, this.speed);
-
-            if ((transform.localScale - target).sqrMagnitude < this.sqrThreshold)
+            if ((transform.localScale - target).sqrMagnitude > this.sqrThreshold)
             {
+                transform.localScale = Vector3.Lerp(transform.localScale, target, this.speed);
+            } else {
                 transform.localScale = target;
                 this.status = this.status == Status.Shrinking ? Status.Shrunk : Status.Normal;
             }
