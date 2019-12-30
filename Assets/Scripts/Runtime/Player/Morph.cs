@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
+using VRPlayer = Valve.VR.InteractionSystem.Player;
 
 namespace EscapeReality.Player
 {
-    public class Shrink : MonoBehaviour
+    public class Morph : MonoBehaviour
     {
-        private enum Status
+        private enum MorphState
         {
             Normal    = 1,
             Shrunk    = 2,
@@ -21,12 +23,12 @@ namespace EscapeReality.Player
         [SerializeField]
         private float speed;
         private float sqrThreshold;
-        private Status status;
+        private MorphState state;
 #pragma warning restore CS0649
 
         private void Awake()
         {
-            this.status = Status.Normal;
+            this.state = MorphState.Normal;
             this.sqrThreshold = 0.00001f;
         }
 
@@ -34,32 +36,38 @@ namespace EscapeReality.Player
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (this.status == Status.Normal)
-                    this.status = Status.Shrinking;
-                else if (this.status == Status.Shrunk)
-                    this.status = Status.Rising;
+                DebugStartMorphing();
             }
         }
 
         private void FixedUpdate()
         {
-            if ((this.status & Status.Morphing) == this.status)
-                Morph();
+            if ((this.state & MorphState.Morphing) == this.state)
+                Morphing();
         }
 
-        private void Morph()
+        private void Morphing()
         {
             Vector3 target = Vector3.one;
-            if (this.status == Status.Shrinking)
+            if (this.state == MorphState.Shrinking)
                 target *= this.factor;
 
             if ((transform.localScale - target).sqrMagnitude > this.sqrThreshold)
             {
-                transform.localScale = Vector3.Lerp(transform.localScale, target, this.speed);
+                transform.localScale = Vector3.Lerp(transform.localScale, target, this.speed * Time.deltaTime);
+                //Hand hand = VRPlayer.instance.rightHand;
             } else {
                 transform.localScale = target;
-                this.status = this.status == Status.Shrinking ? Status.Shrunk : Status.Normal;
+                this.state = this.state == MorphState.Shrinking ? MorphState.Shrunk : MorphState.Normal;
             }
+        }
+
+        public void DebugStartMorphing()
+        {
+            if (this.state == MorphState.Normal)
+                this.state = MorphState.Shrinking;
+            else if (this.state == MorphState.Shrunk)
+                this.state = MorphState.Rising;
         }
     }
 }
