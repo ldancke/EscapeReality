@@ -6,7 +6,7 @@ namespace EscapeReality.Game
 {
     public class Timer : MonoBehaviour 
     {
-        public float time = 0;
+        public GameState state = new GameState(0f);
         private bool _gameStarted = false;
 
         public void Start() {
@@ -26,9 +26,9 @@ namespace EscapeReality.Game
         private IEnumerator gameTimer() {
             while (_gameStarted) 
             {
-                Debug.Log(time);
+                Debug.Log(state.GetTimeString());
                 yield return null;
-                time += Time.deltaTime;
+                state.UpdateTime(Time.deltaTime);
             }
         }
     }
