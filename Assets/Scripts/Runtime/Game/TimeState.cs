@@ -1,24 +1,24 @@
 using UnityEngine;
 
 namespace EscapeReality.Game {
-    public class GameState {
-        public delegate void OnTimeUpdateDelegate(string newTime);
+    public class TimeState {
+        public delegate void OnTimeUpdateDelegate(float timeFloat);
         public static OnTimeUpdateDelegate timeUpdateDelegate; 
 
         private float _time;
 
         public void UpdateTime(float delta) {
             var newTime = _time + delta;
-            var newTimeString = GameState.GetTimeString(newTime);
+            var newTimeString = TimeState.GetTimeString(newTime);
 
             if (!newTimeString.Equals(GetTimeString())) {
-                timeUpdateDelegate(newTimeString);
+                timeUpdateDelegate(newTime);
             }
 
             _time = newTime;
         }
 
-        public GameState(float time) {
+        public TimeState(float time) {
             _time = time;
         }
 
@@ -31,7 +31,7 @@ namespace EscapeReality.Game {
         }
 
         public string GetTimeString() {
-            return GameState.GetTimeString(_time);
+            return TimeState.GetTimeString(_time);
         }
 
         public static string GetTimeString(float time) {

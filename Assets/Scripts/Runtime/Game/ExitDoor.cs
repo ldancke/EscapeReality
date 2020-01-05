@@ -13,22 +13,15 @@ namespace EscapeReality.Game
         private bool _gameStarted = false;
 
         public void OnGameStart() {
-            Debug.Log("Game started");
             gameStartDelegate();
         }
 
         public void OnGameEnd() {
-            Debug.Log("Game ended");
             gameEndDelegate();
-        }
-
-        void Start() {
-            
         }
 
         private void OnTriggerExit(Collider other)
         {
-            Debug.Log("Trigger enter");
             if (!_gameStarted) {
                 OnGameStart();
             } else {

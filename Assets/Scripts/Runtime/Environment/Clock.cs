@@ -7,11 +7,11 @@ namespace EscapeReality.Environment{
         void Start() {
             text = GetComponent<TextMesh>();
 
-            GameState.timeUpdateDelegate += OnUpdateTime;
+            TimeState.timeUpdateDelegate += OnUpdateTime;
         }
 
-        private void OnUpdateTime(string newTime) {
-            text.text = newTime;
+        private void OnUpdateTime(float newTime) {
+            text.text = TimeState.GetTimeString(newTime);
         }
     }
 }
