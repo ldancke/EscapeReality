@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 namespace EscapeReality.Game 
@@ -22,13 +21,19 @@ namespace EscapeReality.Game
 
         private void OnTriggerExit(Collider other)
         {
-            if (!_gameStarted) {
-                OnGameStart();
-            } else {
-                OnGameEnd();
-            }
+            _gameStarted = true;
+            OnGameStart();
+            Debug.Log("Trigger exit");
+        }
 
-            _gameStarted = !_gameStarted;
+        private void OnTriggerEnter(Collider other)
+        {
+            if (_gameStarted)
+            {
+                _gameStarted = false;
+                OnGameEnd();
+                Debug.Log("Trigger enter");
+            }
         }
     }
 }

@@ -21,7 +21,7 @@ namespace EscapeReality.Game
         }
 
         public override string ToString() {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder("Leaderboard: \n\n");
             
             for (int i = 0; i < highscores.Count; i++) {
                 var score = highscores[i];
