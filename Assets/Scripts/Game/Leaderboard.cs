@@ -17,7 +17,7 @@ namespace EscapeReality.Game
             text = GetComponent<TextMesh>();
 
             TimeState.timeUpdateDelegate += OnTimeUpdate;
-            ExitDoor.gameEndDelegate += OnGameEnd;
+            GameManager.Instance.OnGameStop += OnGameEnd;
 
             LoadHighscores();
         }
