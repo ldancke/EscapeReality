@@ -11,7 +11,12 @@ namespace EscapeReality
 
         private void Update()
         {
-            this.text.text = GameManager.Instance.TimeTracker.Elapsed.ToString();
+            this.text.text = Format(GameManager.Instance.TimeTracker.Elapsed);
+        }
+
+        private string Format(float time)
+        {
+            return Mathf.Floor(time / 60).ToString("00") + ":" + (time % 60).ToString("00");
         }
     }
 }
