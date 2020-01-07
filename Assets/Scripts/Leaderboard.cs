@@ -2,34 +2,33 @@ using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
-namespace EscapeReality.Game 
+namespace EscapeReality 
 {
     public class Leaderboard: MonoBehaviour 
     {
         private string filePath;
 
         private HighscoreSave save;
-        private float time;
         private TextMesh text;
 
-        public void Start() {
-            filePath = Application.persistentDataPath + "/highscores.save";
-            text = GetComponent<TextMesh>();
+        private void Awake()
+        {
+            this.filePath = Application.persistentDataPath + "/highscores.save";
+            this.text = GetComponent<TextMesh>();
 
-            TimeState.timeUpdateDelegate += OnTimeUpdate;
-            ExitDoor.gameEndDelegate += OnGameEnd;
+            GameManager.Instance.OnGameStop += OnGameEnd;
+        }
 
+        private void Start() {
             LoadHighscores();
         }
 
-        private void OnTimeUpdate(float newTime) {
-            time = newTime;
-        }
-
         private void OnGameEnd() {
-            save.AddHighScore("Keppler", time);
-            TimeState.timeUpdateDelegate -= OnTimeUpdate;
+            save.AddHighScore("Keppler", GameManager.Instance.TimeTracker.Elapsed);
             SaveHighscores();
+
+            // Hack to display highscores instantly
+            LoadHighscores();
         }
 
         private void LoadHighscores() {
