@@ -1264,7 +1264,6 @@ GameObject:
   - component: {fileID: 411711005}
   - component: {fileID: 411711008}
   - component: {fileID: 411711007}
-  - component: {fileID: 411711006}
   m_Layer: 0
   m_Name: ClockText
   m_TagString: Untagged
@@ -1286,18 +1285,6 @@ Transform:
   m_Father: {fileID: 1226508439}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: -180, z: 0}
---- !u!114 &411711006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 411711004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fa70e680bc483f7e9d8f6ef9cd91bb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!102 &411711007
 TextMesh:
   serializedVersion: 3
@@ -2029,6 +2016,7 @@ GameObject:
   - component: {fileID: 1226508442}
   - component: {fileID: 1226508441}
   - component: {fileID: 1226508440}
+  - component: {fileID: 1226508443}
   m_Layer: 0
   m_Name: DigitalClock
   m_TagString: Untagged
@@ -2110,6 +2098,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226508438}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1226508443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226508438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa70e680bc483f7e9d8f6ef9cd91bb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 411711007}
 --- !u!1 &1234798236
 GameObject:
   m_ObjectHideFlags: 0

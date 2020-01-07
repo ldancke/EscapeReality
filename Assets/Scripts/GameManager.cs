@@ -14,19 +14,37 @@ namespace EscapeReality
     public class GameManager : MonoBehaviour
     {
         private static GameManager instance;
-        public static GameManager Instance { get; private set; }
+        public static GameManager Instance
+        {
+            get { return GameManager.instance; }
+            private set { GameManager.instance = value; }
+        }
 
         private GameState gameState;
-        public GameState GameState { get; private set; }
+        public GameState GameState
+        {
+            get { return this.gameState; }
+            private set { this.gameState = value; }
+        }
 
         private TimeTracker timeTracker;
-        public TimeTracker TimeTracker { get; private set; }
+        public TimeTracker TimeTracker
+        {
+            get { return this.timeTracker; }
+            private set { this.timeTracker = value; }
+        }
 
         public event Action OnGameStart;
         public event Action OnGameStop;
 
         private void Awake()
         {
+            if (GameManager.instance != null && GameManager.instance != this)
+                Destroy(this);
+            else
+                GameManager.instance = this;
+
+            this.gameState = GameState.Stopped;
             this.timeTracker = new TimeTracker();
         }
 
