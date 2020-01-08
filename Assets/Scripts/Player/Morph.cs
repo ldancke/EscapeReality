@@ -55,7 +55,15 @@ namespace EscapeReality.Player
             if ((transform.localScale - target).sqrMagnitude > this.sqrThreshold)
             {
                 transform.localScale = Vector3.Lerp(transform.localScale, target, this.speed * Time.deltaTime);
-                //Hand hand = VRPlayer.instance.rightHand;
+                foreach (Hand hand in VRPlayer.instance.hands)
+                {
+                    GameObject go = hand.currentAttachedObject;
+                    if (go == null)
+                        Debug.Log($"nothing in hand: {hand.gameObject.name}");
+                    else
+                        go.transform.localScale = Vector3.Lerp(go.transform.localScale, target, this.speed * Time.deltaTime);
+                }
+
             } else {
                 transform.localScale = target;
                 this.state = this.state == MorphState.Shrinking ? MorphState.Shrunk : MorphState.Normal;
