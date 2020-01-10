@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace EscapeReality
 {
-    public class DoorOpener : MonoBehaviour
+    public class DoorCloser : MonoBehaviour
     {
         void Start()
         {
