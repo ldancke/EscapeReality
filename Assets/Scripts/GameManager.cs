@@ -36,6 +36,7 @@ namespace EscapeReality
 
         public event Action OnGameStart;
         public event Action OnGameStop;
+        public event Action OnKeyQuestSolved;
 
         private void Awake()
         {
@@ -64,6 +65,12 @@ namespace EscapeReality
 
             this.gameState = GameState.Stopped;
             OnGameStop?.Invoke();
+        }
+
+        public void KeyQuestSolved() 
+        {
+            // this should be called when the key is within reach of the door
+            OnKeyQuestSolved?.Invoke();
         }
     }
 }
