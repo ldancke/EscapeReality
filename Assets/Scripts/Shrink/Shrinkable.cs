@@ -9,7 +9,7 @@ namespace EscapeReality.Shrink
     [RequireComponent(typeof(Valve.VR.InteractionSystem.Throwable))]
     public class Shrinkable : MonoBehaviour
     {
-        [Tooltip("Indicates whether the object is shrunk from the beginning - used in tracking the state later")]
+        [Tooltip("Indicated the object's default state")]
         public State state;
 
         private ShrinkController cachedShrinkController;
@@ -21,16 +21,34 @@ namespace EscapeReality.Shrink
 
         private void Start()
         {
-            IgnoreHovering();
-            VRPlayer.instance.GetComponent<ShrinkController>().OnMorphed += IgnoreHovering;
+            UpdateHovering();
+            cachedShrinkController.OnMorphed += UpdateHovering;
         }
 
-        private void IgnoreHovering()
+        private void UpdateHovering()
         {
-            if (cachedShrinkController.State == this.state)
-                Destroy(GetComponent<IgnoreHovering>());
+            if (this.cachedShrinkController.State != this.state)
+                DisableHovering();
             else
-                gameObject.AddComponent<IgnoreHovering>();
+                RestoreHovering();
+        }
+
+        private void DisableHovering()
+        {
+            IgnoreHovering ignoreHovering = GetComponent<IgnoreHovering>();
+            if (ignoreHovering != null)
+                return;
+
+            gameObject.AddComponent<IgnoreHovering>();
+        }
+
+        private void RestoreHovering()
+        {
+            IgnoreHovering ignoreHovering = GetComponent<IgnoreHovering>();
+            if (ignoreHovering == null)
+                return;
+
+            Destroy(ignoreHovering);
         }
     }
 }

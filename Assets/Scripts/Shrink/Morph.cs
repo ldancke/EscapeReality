@@ -4,15 +4,9 @@ using UnityEngine;
 
 namespace EscapeReality.Shrink
 {
-    public enum MorphType
+    public struct Morph
     {
-        Shrink,
-        Rise
-    }
-
-    public class Morph
-    {
-        private Vector3 target;
-        private MorphType morphType;
+        public Vector3 target;
+        public float speed;
     }
 }

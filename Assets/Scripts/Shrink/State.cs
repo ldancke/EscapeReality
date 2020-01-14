@@ -7,6 +7,7 @@ namespace EscapeReality.Shrink
     public enum State
     {
         Normal,
-        Shrunk
+        Shrunk,
+        Morphing
     }
 }
