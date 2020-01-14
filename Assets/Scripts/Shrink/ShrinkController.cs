@@ -11,7 +11,7 @@ namespace EscapeReality.Shrink
     {
 #pragma warning disable CS0649
         [SerializeField, Range(0.1f, 1f)]
-        private float factor;
+        private float shrinkFactor;
 
         [SerializeField]
         private float speed;
@@ -19,9 +19,7 @@ namespace EscapeReality.Shrink
         [SerializeField]
         private float sqrThreshold;
 
-        private Vector3 morphTarget;
-        private State newState;
-        private HashSet<Shrinkable> shrinkablesInHands;
+        private Morph morph;
 
         private State state;
         public State State
@@ -35,8 +33,7 @@ namespace EscapeReality.Shrink
 
         private void Awake()
         {
-            this.state = State.Normal;
-            this.shrinkablesInHands = new HashSet<Shrinkable>();
+            this.State = State.Normal;
         }
 
         private void Update()
@@ -47,58 +44,48 @@ namespace EscapeReality.Shrink
 
         private void FixedUpdate()
         {
-            if (this.state == State.Morphing)
-                Morphing();
-        }
-
-        private void Morphing()
-        {
-            if ((transform.localScale - this.morphTarget).sqrMagnitude > this.sqrThreshold)
+            if (this.State == State.Morphing)
             {
-                transform.localScale = Vector3.Lerp(transform.localScale, morphTarget, this.speed * Time.deltaTime);
-                foreach (Shrinkable shrinkable in this.shrinkablesInHands)
-                    shrinkable.transform.localScale = Vector3.Lerp(shrinkable.transform.localScale, morphTarget, this.speed * Time.deltaTime);
-            } else {
-                FinalizeMorph();
+                if ((transform.localScale - this.morph.target).sqrMagnitude > this.sqrThreshold)
+                {
+                    transform.localScale = Vector3.Lerp(transform.localScale, this.morph.target, this.speed * Time.deltaTime);
+                }
+                else
+                {
+                    FinalizeMorph();
+                }
             }
         }
 
         public void Morph()
         {
-            switch (this.state)
-            {
-                case State.Normal:
-                    Shrink();
-                    break;
-                case State.Shrunk:
-                    Rise();
-                    break;
-            }
+            if (this.State == State.Normal)
+                Shrink();
+            else if (this.State == State.Shrunk)
+                Rise();
         }
 
         public void Shrink()
         {
-            if (this.state != State.Normal)
+            if (this.State != State.Normal)
                 return;
 
-            this.morphTarget = Vector3.one * this.factor;
-            this.newState = State.Shrunk;
+            this.morph = new Morph(MorphType.Shrink, Vector3.one * this.shrinkFactor);
             InitializeMorph();
         }
 
         public void Rise()
         {
-            if (this.state != State.Shrunk)
+            if (this.State != State.Shrunk)
                 return;
 
-            this.morphTarget = Vector3.one;
-            this.newState = State.Normal;
+            this.morph = new Morph(MorphType.Rise, Vector3.one);
             InitializeMorph();
         }
 
         private void InitializeMorph()
         {
-            this.state = State.Morphing;
+            this.State = State.Morphing;
 
             foreach (Hand hand in VRPlayer.instance.hands)
             {
@@ -106,21 +93,20 @@ namespace EscapeReality.Shrink
                 if (go == null)
                     continue;
 
-                Shrinkable shrinkable = go?.GetComponent<Shrinkable>();
+                Shrinkable shrinkable = go.GetComponent<Shrinkable>();
                 if (shrinkable == null)
-                    hand.DetachObject(shrinkable.gameObject);
+                    hand.DetachObject(go);
                 else
-                    this.shrinkablesInHands.Add(shrinkable);
+                    this.morph.shrinkablesInHand.Add(shrinkable);
             }
         }
 
         private void FinalizeMorph()
         {
-            transform.localScale = this.morphTarget;
-            foreach (Shrinkable shrinkable in this.shrinkablesInHands)
-                shrinkable.state = this.newState;
-            this.shrinkablesInHands.Clear();
-            this.state = this.newState;
+            transform.localScale = this.morph.target;
+            foreach (Shrinkable shrinkable in this.morph.shrinkablesInHand)
+                shrinkable.CurrentState = this.morph.ResultingState;
+            this.State = this.morph.ResultingState;
             OnMorphed?.Invoke();
         }
     }
