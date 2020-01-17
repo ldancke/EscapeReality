@@ -37,6 +37,7 @@ namespace EscapeReality
         public event Action OnGameStart;
         public event Action OnGameStop;
         public event Action OnKeyQuestSolved;
+        public event Action OnCorrectCombination;
 
         private void Awake()
         {
@@ -71,6 +72,12 @@ namespace EscapeReality
         {
             // this should be called when the key is within reach of the door
             OnKeyQuestSolved?.Invoke();
+        }
+
+        public void CorrectCombination()
+        {
+            // called when correct code is entered
+            OnCorrectCombination?.Invoke();
         }
     }
 }
