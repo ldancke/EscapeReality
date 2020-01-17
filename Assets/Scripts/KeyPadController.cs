@@ -2,68 +2,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using Valve.VR.InteractionSystem;
-using VRPlayer = Valve.VR.InteractionSystem.Player;
 
 namespace EscapeReality { 
 
     public class KeyPadController : MonoBehaviour
     {
+        [SerializeField]
+        private int[] password;
+        private List<int> input;
 
-        public string password = "4213";
-        public int length = 4;
-        public string input;
+        public event Action OnCorrectCode;
 
+        private void Awake() => this.input = new List<int>();
 
-        void Update()
+        private void CheckCorrectCode()
         {
-                                  
-            if (input == password)
-            {
-                Debug.Log("Correct Combination Pressed");
-                GameManager.Instance.CorrectCombination();
-            }
+            if (this.input.Count != this.password.Length)
+                return;
 
+            for (int i = 0; i < this.password.Length; ++i)
+                if (this.input[i] != this.password[i])
+                    return;
+
+            OnCorrectCode?.Invoke();
         }
 
-        public void StonePressed(string number)
-             {
-            Debug.Log(number);
-            }
-
-
-
-        public void FirstStonePressed()
+        private void UpdateInput(int number)
         {
-            input += "1";
-            Debug.Log("Stone Pressed:" + input);
+            if (this.input.Count >= this.password.Length)
+                this.input.RemoveAt(0);
+            this.input.Add(number);
         }
 
-        public void SecondStonePressed()
+        public void StonePressed(int stoneNumber)
         {
-            input += "2";
-            Debug.Log("Stone Pressed:" + input);
+            UpdateInput(stoneNumber);
+            CheckCorrectCode();
         }
 
-        public void ThirdStonePressed()
-        {
-            input += "3";
-            Debug.Log("Stone Pressed:" + input);
-        }
-
-        public void ForthStonePressed()
-        {
-            input += "4";
-            Debug.Log("Stone Pressed:" + input);
-        }
-
-        public void ResetCode()
-        {
-            Debug.Log("Reset Pressed - Input before:" + input);
-            input = "";
-            Debug.Log("Reset Pressed - input cleared - new input :" + input);
-        }
-       
     }
 }
