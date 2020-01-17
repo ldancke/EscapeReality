@@ -19,7 +19,6 @@ namespace EscapeReality
 
         private DoorState state;
         private float speed = 1f;
-        private float threshhold = 0.1f;
         private float startTime;
 
         void Awake()

@@ -36,24 +36,14 @@ namespace EscapeReality.Shrink
             this.State = State.Normal;
         }
 
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-                Morph();
-        }
-
         private void FixedUpdate()
         {
             if (this.State == State.Morphing)
             {
                 if ((transform.localScale - this.morph.target).sqrMagnitude > this.sqrThreshold)
-                {
                     transform.localScale = Vector3.Lerp(transform.localScale, this.morph.target, this.speed * Time.deltaTime);
-                }
                 else
-                {
                     FinalizeMorph();
-                }
             }
         }
 
