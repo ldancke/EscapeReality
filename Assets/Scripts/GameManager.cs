@@ -53,6 +53,7 @@ namespace EscapeReality
 
         public event Action OnGameStart;
         public event Action OnGameStop;
+        public event Action OnMazeQuestSolved;
 
         private void Awake()
         {
@@ -81,6 +82,11 @@ namespace EscapeReality
 
             this.gameState = GameState.Stopped;
             OnGameStop?.Invoke();
+        }
+
+        public void MazeQuestSolved()
+        {
+            OnMazeQuestSolved?.Invoke();
         }
     }
 }
