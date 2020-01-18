@@ -34,6 +34,14 @@ namespace EscapeReality
             private set { this.timeTracker = value; }
         }
 
+        [SerializeField]
+        private KeyPadController keyPadController;
+        public KeyPadController KeyPadController
+        {
+            get { return this.keyPadController; }
+            private set { this.keyPadController = value; }
+        }
+
         public event Action OnGameStart;
         public event Action OnGameStop;
         public event Action OnKeyQuestSolved;
