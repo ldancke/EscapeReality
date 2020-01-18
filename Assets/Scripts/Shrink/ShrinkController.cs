@@ -29,6 +29,8 @@ namespace EscapeReality.Shrink
         }
 #pragma warning restore CS0649
 
+        public event Action OnNormal;
+        public event Action OnShrunk;
         public event Action OnMorphed;
 
         private void Awake()
@@ -94,9 +96,17 @@ namespace EscapeReality.Shrink
         private void FinalizeMorph()
         {
             transform.localScale = this.morph.target;
+
             foreach (Shrinkable shrinkable in this.morph.shrinkablesInHand)
                 shrinkable.CurrentState = this.morph.ResultingState;
-            this.State = this.morph.ResultingState;
+
+            this.state = this.morph.ResultingState;
+
+            if (this.state == State.Normal)
+                OnNormal?.Invoke();
+            else
+                OnShrunk?.Invoke();
+
             OnMorphed?.Invoke();
         }
     }

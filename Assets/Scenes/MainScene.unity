@@ -4546,6 +4546,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523067319}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1526137593 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2235754481361916090, guid: 970078086dea5325da51431eb05b89b2,
+    type: 3}
+  m_PrefabInstance: {fileID: 2235754479979184107}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1526137599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526137593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a546b5150ef1fc34ba4192409e4ec7e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeState: 1
 --- !u!1 &1526749778
 GameObject:
   m_ObjectHideFlags: 0
@@ -6084,6 +6103,25 @@ Transform:
   m_Father: {fileID: 1254890226}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2041584459 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2235754480441932072, guid: 970078086dea5325da51431eb05b89b2,
+    type: 3}
+  m_PrefabInstance: {fileID: 2235754479979184107}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2041584465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041584459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a546b5150ef1fc34ba4192409e4ec7e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeState: 1
 --- !u!1001 &2082570453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11756,6 +11794,21 @@ PrefabInstance:
     - target: {fileID: 2235754480120299734, guid: 970078086dea5325da51431eb05b89b2,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235754480441932078, guid: 970078086dea5325da51431eb05b89b2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235754480441932078, guid: 970078086dea5325da51431eb05b89b2,
+        type: 3}
+      propertyPath: markerActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235754481361916088, guid: 970078086dea5325da51431eb05b89b2,
+        type: 3}
+      propertyPath: markerActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2235754481372117786, guid: 970078086dea5325da51431eb05b89b2,
