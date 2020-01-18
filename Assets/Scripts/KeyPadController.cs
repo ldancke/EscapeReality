@@ -7,9 +7,11 @@ namespace EscapeReality {
 
     public class KeyPadController : MonoBehaviour
     {
+#pragma warning disable CS0649
         [SerializeField]
         private int[] password;
         private List<int> input;
+#pragma warning restore CS0649
 
         public event Action OnCorrectCode;
 

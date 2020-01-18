@@ -10,15 +10,20 @@ namespace EscapeReality
     public class MagicalPlinth : MonoBehaviour
     {
         private ShrinkController shrinkController;
+        private bool isActive;
 
         private void Awake()
         {
             this.shrinkController = VRPlayer.instance.GetComponent<ShrinkController>();
+            this.isActive = false;
+            GameManager.Instance.KeyPadController.OnCorrectCode += Activate;
         }
+
+        private void Activate() => this.isActive = true;
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag("VRHead"))
+            if (this.isActive && other.gameObject.CompareTag("VRHead"))
                 this.shrinkController.Morph();
         }
     }
