@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.escapereality.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "D:\\Documents\\development\\Unity-Projects\\Escape Reality\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "D:\\Documents\\development\\Unity-Projects\\EscapeReality\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "Escape Reality [Testing]"
