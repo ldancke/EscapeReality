@@ -6,6 +6,7 @@ TagManager:
   tags:
   - VRHead
   - Key
+  - BucketQuestItem
   layers:
   - Default
   - TransparentFX

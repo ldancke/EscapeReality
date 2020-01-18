@@ -53,7 +53,7 @@ namespace EscapeReality
 
         public event Action OnGameStart;
         public event Action OnGameStop;
-        public event Action OnMazeQuestSolved;
+        public event Action OnBucketQuestSolved;
 
         private void Awake()
         {
@@ -84,9 +84,9 @@ namespace EscapeReality
             OnGameStop?.Invoke();
         }
 
-        public void MazeQuestSolved()
+        public void BucketQuestSolved()
         {
-            OnMazeQuestSolved?.Invoke();
+            OnBucketQuestSolved?.Invoke();
         }
     }
 }
