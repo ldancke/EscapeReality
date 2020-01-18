@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace EscapeReality 
+namespace EscapeReality.Door
 {
-    public class ExitDoor : MonoBehaviour 
+    public class Exit : MonoBehaviour 
     {
         private void OnTriggerExit(Collider other)
         {

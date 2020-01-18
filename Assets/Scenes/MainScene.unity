@@ -5633,6 +5633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyPadController: {fileID: 243509931}
+  keyTriggerCollider: {fileID: 42601984}
 --- !u!4 &1922173344
 Transform:
   m_ObjectHideFlags: 0
