@@ -11,7 +11,10 @@ namespace EscapeReality.Door
 
         public void OnTriggerEnter(Collider other) {
             if (other.CompareTag("Key"))
+            {
                 OnKeyQuestSolved?.Invoke();
+                GameManager.Instance.GameStop();
+            }   
         }
     }
 }

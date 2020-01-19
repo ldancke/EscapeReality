@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using VRPlayer = Valve.VR.InteractionSystem.Player;
 using EscapeReality.Door;
 
 namespace EscapeReality
@@ -52,6 +53,14 @@ namespace EscapeReality
             private set { this.keyTriggerCollider = value; }
         }
 
+        [SerializeField]
+        private Exit exit;
+        public Exit Exit
+        {
+            get { return this.exit; }
+            private set { this.exit = value; }
+        }
+
         public event Action OnGameStart;
         public event Action OnGameStop;
         public event Action OnBucketQuestSolved;
@@ -93,6 +102,7 @@ namespace EscapeReality
 
         public void ResetScene()
         {
+            Destroy(VRPlayer.instance.gameObject);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 

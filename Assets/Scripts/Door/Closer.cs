@@ -17,16 +17,17 @@ namespace EscapeReality.Door
         public float doorOpenYAngle = -90f;
         public float doorClosedYAngle = 0f;
 
+        [SerializeField]
         private State state;
         private float speed = 1f;
         private float startTime;
 
         void Awake()
         {
-            this.state = State.Open;
-            transform.eulerAngles = new Vector3(0f, doorOpenYAngle, 0f);
+            //transform.eulerAngles = new Vector3(0f, doorClosedYAngle, 0f);
 
-            GameManager.Instance.OnGameStart += StartClosing;
+            GameManager.Instance.OnGameStart += StartOpening;
+            GameManager.Instance.Exit.OnPlayerLeaveSpawn += StartClosing;
             GameManager.Instance.KeyTriggerCollider.OnKeyQuestSolved += StartOpening;
         }
 
@@ -49,6 +50,7 @@ namespace EscapeReality.Door
             {
                 startTime = Time.time;
                 state = State.Closing;
+                GameManager.Instance.Exit.OnPlayerLeaveSpawn -= StartClosing;
             }
         }
 
