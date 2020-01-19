@@ -15,7 +15,7 @@ namespace EscapeReality
         {
             Debug.Log("Changing guide color...");
             var renderer = GetComponent<Renderer>();
-            renderer.material.SetColor("_Color", Color.green);
+            renderer.material.SetColor("_Color", new Color(0.2198736f, 0.5754717f, 0.221145f));
         }
     }
 }
