@@ -3818,6 +3818,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 292855330817608414, guid: bf9182af4ee932342b9119e75c2736fb,
+        type: 3}
+      propertyPath: cullingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 292855330817608414, guid: bf9182af4ee932342b9119e75c2736fb,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 292855330817608415, guid: bf9182af4ee932342b9119e75c2736fb,
+        type: 3}
+      propertyPath: m_MinParticleSize
+      value: 0.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 292855330817608415, guid: bf9182af4ee932342b9119e75c2736fb,
+        type: 3}
+      propertyPath: m_MaxParticleSize
+      value: 99999
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf9182af4ee932342b9119e75c2736fb, type: 3}
 --- !u!4 &821421491 stripped
