@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using EscapeReality.Door;
 
 namespace EscapeReality
@@ -66,6 +67,12 @@ namespace EscapeReality
             this.timeTracker = new TimeTracker();
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+                ResetScene();
+        }
+
         public void GameStart()
         {
             if (this.gameState == GameState.Running)
@@ -82,6 +89,11 @@ namespace EscapeReality
 
             this.gameState = GameState.Stopped;
             OnGameStop?.Invoke();
+        }
+
+        public void ResetScene()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         public void BucketQuestSolved()
