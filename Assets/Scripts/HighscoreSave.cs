@@ -22,7 +22,7 @@ namespace EscapeReality
 
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder("Leaderboard: \n\n");
+            StringBuilder sb = new StringBuilder("\t  Leaderboard\n\n");
             
             for (int i = 0; i < highscores.Count; i++)
             {
