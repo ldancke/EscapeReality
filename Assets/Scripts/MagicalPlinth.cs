@@ -9,10 +9,12 @@ namespace EscapeReality
     [RequireComponent(typeof(Collider))]
     public class MagicalPlinth : MonoBehaviour
     {
+#pragma warning disable CS0649
         private ShrinkController shrinkController;
         private bool isActive;
         [SerializeField]
-        ParticleSystem particles; 
+        ParticleSystem particles;
+#pragma warning restore CS0649
 
         private void Awake()
         {
