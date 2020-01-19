@@ -11,6 +11,8 @@ namespace EscapeReality
     {
         private ShrinkController shrinkController;
         private bool isActive;
+        [SerializeField]
+        ParticleSystem particles; 
 
         private void Awake()
         {
@@ -19,7 +21,11 @@ namespace EscapeReality
             GameManager.Instance.KeyPadController.OnCorrectCode += Activate;
         }
 
-        private void Activate() => this.isActive = true;
+        private void Activate()
+        {
+            this.particles.gameObject.SetActive(true);
+            this.isActive = true;
+        }
 
         private void OnTriggerEnter(Collider other)
         {
