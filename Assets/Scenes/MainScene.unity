@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414735, b: 0.1210785, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -745,26 +745,26 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Found
     clip: {fileID: 8300000, guid: e05fc3f90b528494c8aa7ecdbd30c9a2, type: 3}
-    volume: 0.5
+    volume: 0.25
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Warp_Appear
     clip: {fileID: 8300000, guid: 7e5f3d2af0b2d6647827c249f9114f86, type: 3}
-    volume: 0.5
+    volume: 0.25
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Warp_Small
     clip: {fileID: 8300000, guid: 4f945a7a1ebbfc84e831b69b9e3bfd44, type: 3}
     volume: 0.5
-    pitch: 1
+    pitch: 1.2
     loop: 0
     source: {fileID: 0}
   - name: Warp_Big
     clip: {fileID: 8300000, guid: ccbd2a03b6a0dd141952c94cefddb16b, type: 3}
     volume: 0.5
-    pitch: 1
+    pitch: 1.2
     loop: 0
     source: {fileID: 0}
   - name: Door_Open
@@ -5380,6 +5380,108 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1076443963}
   m_Mesh: {fileID: 1103966436130776082, guid: 694ca7541acdc4d43904e93226c3862e, type: 3}
+--- !u!1 &1101228694 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 292855330817608409, guid: bf9182af4ee932342b9119e75c2736fb,
+    type: 3}
+  m_PrefabInstance: {fileID: 821421490}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1101228696
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101228694}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e58b563b0100d4b73b563b9bd51aafa3, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.01
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1125917330
 GameObject:
   m_ObjectHideFlags: 0

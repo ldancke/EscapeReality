@@ -62,6 +62,8 @@ namespace EscapeReality.Shrink
             if (this.State != State.Normal)
                 return;
 
+            AudioManager.instance.Play("Warp_Small");
+
             this.morph = new Morph(MorphType.Shrink, Vector3.one * this.shrinkFactor);
             InitializeMorph();
         }
@@ -70,6 +72,8 @@ namespace EscapeReality.Shrink
         {
             if (this.State != State.Shrunk)
                 return;
+
+            AudioManager.instance.Play("Warp_Big");
 
             this.morph = new Morph(MorphType.Rise, Vector3.one);
             InitializeMorph();
