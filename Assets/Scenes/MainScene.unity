@@ -18381,7 +18381,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 24959625}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &831533079
+--- !u!64 &831533082
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18586,7 +18586,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1599693173}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &862640438
+--- !u!64 &862640441
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -29522,7 +29522,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 24959625}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1137619194
+--- !u!64 &1137619197
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41992,8 +41992,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyPadController: {fileID: 451539361}
   keyTriggerCollider: {fileID: 42601984}
-  hint1: {fileID: 1087014519}
   exit: {fileID: 245030955}
+  gameObjectsToReset:
+  - {fileID: 1087014519}
+  - {fileID: 87020836}
+  - {fileID: 1116289479}
 --- !u!4 &1922173344
 Transform:
   m_ObjectHideFlags: 0
