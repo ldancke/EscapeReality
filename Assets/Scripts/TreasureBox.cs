@@ -32,6 +32,7 @@ namespace EscapeReality
             {
                 state = TreasureBoxState.Opening;
                 startTime = Time.time;
+                AudioManager.instance.Play("Found");
             }
         }
 

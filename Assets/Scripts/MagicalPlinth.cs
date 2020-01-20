@@ -27,6 +27,7 @@ namespace EscapeReality
         {
             this.particles.gameObject.SetActive(true);
             this.isActive = true;
+            AudioManager.instance.Play("Warp_Appear");
         }
 
         private void OnTriggerEnter(Collider other)

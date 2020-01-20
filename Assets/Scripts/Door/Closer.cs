@@ -48,6 +48,7 @@ namespace EscapeReality.Door
         {
             if (state == State.Open)
             {
+                AudioManager.instance.Play("Door_Close");
                 startTime = Time.time;
                 state = State.Closing;
                 GameManager.Instance.Exit.OnPlayerLeaveSpawn -= StartClosing;
@@ -73,6 +74,7 @@ namespace EscapeReality.Door
         {
             if (state == State.Closed)
             {
+                AudioManager.instance.Play("Door_Open");
                 startTime = Time.time;
                 state = State.Opening;
             }
