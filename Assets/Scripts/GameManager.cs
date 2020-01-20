@@ -54,6 +54,9 @@ namespace EscapeReality
         }
 
         [SerializeField]
+        private GameObject hint1;
+
+        [SerializeField]
         private Exit exit;
         public Exit Exit
         {
@@ -102,6 +105,7 @@ namespace EscapeReality
 
         public void ResetScene()
         {
+            Destroy(this.hint1);
             Destroy(VRPlayer.instance.gameObject);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }

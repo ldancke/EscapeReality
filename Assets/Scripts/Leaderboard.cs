@@ -24,7 +24,7 @@ namespace EscapeReality
         }
 
         private void OnGameEnd() {
-            save.AddHighScore("Keppler", GameManager.Instance.TimeTracker.Elapsed);
+            save.AddHighScore("Player", GameManager.Instance.TimeTracker.Elapsed);
             SaveHighscores();
 
             // Hack to display highscores instantly
