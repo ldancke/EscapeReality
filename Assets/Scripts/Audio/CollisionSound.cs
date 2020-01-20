@@ -10,7 +10,7 @@ public class CollisionSound : MonoBehaviour
         if (col.relativeVelocity.magnitude > 1)
             GetComponent<AudioSource>().Play();
 
-       // Debug.Log(col.collider.name);
+       Debug.Log(col.collider.name);
     }
 
 }
