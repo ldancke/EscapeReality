@@ -1,0 +1,60 @@
+\hypertarget{class_escape_reality_1_1_highscore_save}{}\doxysection{Escape\+Reality.\+Highscore\+Save Class Reference}
+\label{class_escape_reality_1_1_highscore_save}\index{EscapeReality.HighscoreSave@{EscapeReality.HighscoreSave}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_escape_reality_1_1_highscore_save_a10961b14e2cd17be9d08af1f29710d43}{Add\+High\+Score}} (string name, float time)
+\item 
+override string \mbox{\hyperlink{class_escape_reality_1_1_highscore_save_abe252a91ff8a68752385f8705ac3eeb7}{To\+String}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$(string, float)$>$ \mbox{\hyperlink{class_escape_reality_1_1_highscore_save_af3f6a12855a8c2e868997d5338cb7dca}{highscores}} = new List$<$(string, float)$>$()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that holds up to 10 highscore saves 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_escape_reality_1_1_highscore_save_a10961b14e2cd17be9d08af1f29710d43}\label{class_escape_reality_1_1_highscore_save_a10961b14e2cd17be9d08af1f29710d43}} 
+\index{EscapeReality.HighscoreSave@{EscapeReality.HighscoreSave}!AddHighScore@{AddHighScore}}
+\index{AddHighScore@{AddHighScore}!EscapeReality.HighscoreSave@{EscapeReality.HighscoreSave}}
+\doxysubsubsection{\texorpdfstring{AddHighScore()}{AddHighScore()}}
+{\footnotesize\ttfamily void Escape\+Reality.\+Highscore\+Save.\+Add\+High\+Score (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds a new highscore to the list, but only if it\textquotesingle{}s within the 10 best scores
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the player \\
+\hline
+{\em time} & The needed time in milliseconds \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_escape_reality_1_1_highscore_save_abe252a91ff8a68752385f8705ac3eeb7}\label{class_escape_reality_1_1_highscore_save_abe252a91ff8a68752385f8705ac3eeb7}} 
+\index{EscapeReality.HighscoreSave@{EscapeReality.HighscoreSave}!ToString@{ToString}}
+\index{ToString@{ToString}!EscapeReality.HighscoreSave@{EscapeReality.HighscoreSave}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily override string Escape\+Reality.\+Highscore\+Save.\+To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the Highscore-\/list in a human-\/readable way, ready to be printed on a Text\+Mesh
+
+\begin{DoxyReturn}{Returns}
+The list as string, consisting of the score index, the name and the needed time in format \char`\"{}hh\+:mm\char`\"{} 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_escape_reality_1_1_highscore_save_af3f6a12855a8c2e868997d5338cb7dca}\label{class_escape_reality_1_1_highscore_save_af3f6a12855a8c2e868997d5338cb7dca}} 
+\index{EscapeReality.HighscoreSave@{EscapeReality.HighscoreSave}!highscores@{highscores}}
+\index{highscores@{highscores}!EscapeReality.HighscoreSave@{EscapeReality.HighscoreSave}}
+\doxysubsubsection{\texorpdfstring{highscores}{highscores}}
+{\footnotesize\ttfamily List$<$(string, float)$>$ Escape\+Reality.\+Highscore\+Save.\+highscores = new List$<$(string, float)$>$()}
+
+The highscores as list of tuples, the tuples contain the name as string and the needed time as float in milliseconds 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/Highscore\+Save.\+cs\end{DoxyCompactItemize}

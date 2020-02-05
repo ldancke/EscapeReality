@@ -4,6 +4,12 @@ using System.IO;
 
 namespace EscapeReality 
 {
+    /**
+     * A class for the behaviour of the Leaderboard-GameObject
+     *
+     * Loads the highscores on game start and saves them on game end
+     * After loading the highscores they get drawn on a TextMesh
+     */
     public class Leaderboard: MonoBehaviour 
     {
         private string filePath;
@@ -13,6 +19,7 @@ namespace EscapeReality
 
         private void Awake()
         {
+            // this is the save location, different for unix and windows
             this.filePath = Application.persistentDataPath + "/highscores.save";
             this.text = GetComponent<TextMesh>();
 

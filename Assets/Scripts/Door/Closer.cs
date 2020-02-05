@@ -4,6 +4,11 @@ using UnityEngine;
 
 namespace EscapeReality.Door
 {
+    /**
+     * A class for the behaviour of the door GameObject
+     *
+     * The door is able to be closed and opened, each of those with an animation
+     */
     public class Closer : MonoBehaviour
     {
         private enum State 
@@ -14,7 +19,14 @@ namespace EscapeReality.Door
             Closing
         }
 
+        /**
+         * The angle of the door if it is closed
+         */
         public float doorOpenYAngle = -90f;
+
+        /**
+         * The angle of the door if it is open
+         */
         public float doorClosedYAngle = 0f;
 
         [SerializeField]
@@ -44,6 +56,9 @@ namespace EscapeReality.Door
             }
         }
 
+        /**
+         * Starts the closing animation of the door
+         */
         public void StartClosing() 
         {
             if (state == State.Open)
@@ -55,6 +70,9 @@ namespace EscapeReality.Door
             }
         }
 
+        /**
+         * Closes the door a little bit using lerps to simulate a closing animation
+         */
         public void CloseDoor() 
         {
             float distance = (Time.time - startTime) * speed;
@@ -70,6 +88,9 @@ namespace EscapeReality.Door
             }
         }
 
+        /**
+         * Starts the opening animation of the door
+         */
         public void StartOpening() 
         {
             if (state == State.Closed)
@@ -80,6 +101,9 @@ namespace EscapeReality.Door
             }
         }
 
+        /**
+         * Opens the door a little bit using lerps to simulate a closing animation
+         */
         public void OpenDoor() 
         {
             float distance = (Time.time - startTime) * speed;

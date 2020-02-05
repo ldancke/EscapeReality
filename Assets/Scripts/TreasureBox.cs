@@ -2,8 +2,17 @@ using UnityEngine;
 
 namespace EscapeReality
 {
+    /**
+     * A class for behaviour of the TreasureBox-GameObject
+     *
+     * This script enables the TreasureBox-GameObject it is attached to be opened once the corresponding
+     * quest is solved
+     */
     public class TreasureBox : MonoBehaviour
     {
+        /**
+         * Internal only class that represents the state of the TreasureBox
+         */
         private enum TreasureBoxState 
         {
             Closed, 
@@ -16,9 +25,18 @@ namespace EscapeReality
         private float startTime;
         private float speed = 0.2f;
 
+        /**
+         * The angle of the box if it is closed
+         */
         public float boxClosedAngle = 0;
+        /**
+         * The angle of the box if it is open
+         */
         public float boxOpenAngle = -90;
 
+        /**
+         * Sets initial TreasureBoxState and subscribes to corresponding quest 
+         */
         void Awake()
         {
             state = TreasureBoxState.Closed;
@@ -26,6 +44,9 @@ namespace EscapeReality
             GameManager.Instance.OnBucketQuestSolved += Open;
         }
 
+        /**
+         * Starts opening of the TreasureBox and plays some audio
+         */
         public void Open()
         {
             if (state == TreasureBoxState.Closed) 
@@ -36,6 +57,9 @@ namespace EscapeReality
             }
         }
 
+        /**
+         * Performs the TreasureBox-open animation if the state is Opening
+         */
         void FixedUpdate() 
         {
             if (state == TreasureBoxState.Opening)
