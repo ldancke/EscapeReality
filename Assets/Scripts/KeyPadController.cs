@@ -3,13 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace EscapeReality { 
+namespace EscapeReality {
 
+    /**
+     * A class for the behaviour of the KeyPadController.
+     *
+     * Is used to check if the correct code is entered and invokes the OnCorrectCode event if thats the case.
+     */
     public class KeyPadController : MonoBehaviour
     {
 #pragma warning disable CS0649
         [SerializeField]
+        //* Password entered in Inspector.
         private int[] password;
+        //* List of entered numbers.
         private List<int> input;
 #pragma warning restore CS0649
 
@@ -17,6 +24,10 @@ namespace EscapeReality {
 
         private void Awake() => this.input = new List<int>();
 
+        /**
+         * Compares input and password and invokes OnCorrectCode if they match.
+         * 
+         */
         private void CheckCorrectCode()
         {
             if (this.input.Count != this.password.Length)
@@ -29,6 +40,12 @@ namespace EscapeReality {
             OnCorrectCode?.Invoke();
         }
 
+        /**
+         * Updates input list.
+         * Deletes one number before adding the passed one if length of input and password already match.
+         * 
+         * @param number Number of the pressed shield.
+         */
         private void UpdateInput(int number)
         {
             if (this.input.Count >= this.password.Length)
@@ -36,6 +53,11 @@ namespace EscapeReality {
             this.input.Add(number);
         }
 
+        /**
+         * Calls UpdateInput() and CheckCorrectCode().
+         * 
+         * @param stoneNumber Number of the pressed shield.
+         */
         public void StonePressed(int stoneNumber)
         {
             UpdateInput(stoneNumber);
