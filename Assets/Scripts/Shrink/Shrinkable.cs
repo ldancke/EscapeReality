@@ -6,11 +6,19 @@ using VRPlayer = Valve.VR.InteractionSystem.Player;
 
 namespace EscapeReality.Shrink
 {
+    /**
+     * Class / component that indicates if an object is allowed morph
+     * 
+     * When the player morphs hold an object without this class attached,
+     * the object will be dropped to the ground before the morph.
+     * Also keeps track of an objects state so it is not shrunk / risen more then once.
+     */
     [RequireComponent(typeof(Throwable))]
     public class Shrinkable : MonoBehaviour
     {
         private ShrinkController cachedShrinkController;
 
+        /** The state the object is in when spawned */
         [SerializeField]
         private State defaultState;
         public State DefaultState
@@ -19,6 +27,7 @@ namespace EscapeReality.Shrink
             private set { this.defaultState = value; }
         }
 
+        /** The state the object is currently in */
         private State currentState;
         public State CurrentState
         {

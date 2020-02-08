@@ -6,6 +6,9 @@ using EscapeReality.Shrink;
 
 namespace EscapeReality
 {
+    /**
+     * Control class for the magical plinth
+     */
     [RequireComponent(typeof(Collider))]
     public class MagicalPlinth : MonoBehaviour
     {

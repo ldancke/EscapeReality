@@ -7,6 +7,9 @@ using VRPlayer = Valve.VR.InteractionSystem.Player;
 
 namespace EscapeReality.Shrink
 {
+    /**
+     * A control class that allows the player to morph
+     */
     public class ShrinkController : MonoBehaviour
     {
 #pragma warning disable CS0649
@@ -29,8 +32,11 @@ namespace EscapeReality.Shrink
         }
 #pragma warning restore CS0649
 
+        /** Event that gets called *after* the player has risen */
         public event Action OnNormal;
+        /** Event that gets called *after* the player has shrunk */
         public event Action OnShrunk;
+        /** Event that gets called regardless what the new state is */
         public event Action OnMorphed;
 
         private void Awake()
@@ -49,6 +55,12 @@ namespace EscapeReality.Shrink
             }
         }
 
+        /**
+         * Morph the player
+         * 
+         * Will shrink if the player is normal,
+         * will rise if the player is shrunk
+         */
         public void Morph()
         {
             if (this.State == State.Normal)
@@ -57,6 +69,9 @@ namespace EscapeReality.Shrink
                 Rise();
         }
 
+        /**
+         * Shrink the player if possible
+         */
         public void Shrink()
         {
             if (this.State != State.Normal)
@@ -68,6 +83,9 @@ namespace EscapeReality.Shrink
             InitializeMorph();
         }
 
+        /**
+         * Rise the player if possible
+         */
         public void Rise()
         {
             if (this.State != State.Shrunk)

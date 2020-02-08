@@ -8,12 +8,21 @@ using EscapeReality.Door;
 
 namespace EscapeReality
 {
+    /**
+     * Possible game states
+     */
     public enum GameState
     {
         Running,
         Stopped
     }
 
+    /**
+     * Singleton that keeps track of the game state,
+     * provides the utility to (re)start the game
+     * and serves as a registry for other GameObjects
+     * that carry out management tasks like the TimeTracker.
+     */
     public class GameManager : MonoBehaviour
     {
         private static GameManager instance;
@@ -64,8 +73,11 @@ namespace EscapeReality
         [SerializeField]
         private GameObject[] gameObjectsToReset;
 
+        /** Event that gets called when the game starts */
         public event Action OnGameStart;
+        /** Event that gets called when the game stops */
         public event Action OnGameStop;
+        /** Event that gets called when the BucketQuest was solved - should be refactored */
         public event Action OnBucketQuestSolved;
 
         private void Awake()
@@ -85,6 +97,9 @@ namespace EscapeReality
                 ResetScene();
         }
 
+        /**
+         * Starts the game
+         */
         public void GameStart()
         {
             if (this.gameState == GameState.Running)
@@ -94,6 +109,9 @@ namespace EscapeReality
             OnGameStart?.Invoke();
         }
 
+        /**
+         * Stops the game
+         */
         public void GameStop()
         {
             if (this.gameState == GameState.Stopped)
@@ -103,6 +121,9 @@ namespace EscapeReality
             OnGameStop?.Invoke();
         }
 
+        /**
+         * Resets the scene to the base state
+         */
         public void ResetScene()
         {
             foreach (GameObject go in this.gameObjectsToReset)

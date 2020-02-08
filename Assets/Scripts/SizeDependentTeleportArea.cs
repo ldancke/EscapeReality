@@ -7,6 +7,12 @@ using VRPlayer = Valve.VR.InteractionSystem.Player;
 
 namespace EscapeReality
 {
+    /**
+     * Class that "extends" the SteamVR TeleportArea
+     * 
+     * Allows teleport activation to be size dependent.
+     * E.g. activate TeleportArea when the player is small.
+     */
     [RequireComponent(typeof(TeleportArea))]
     public class SizeDependentTeleportArea : MonoBehaviour
     {
