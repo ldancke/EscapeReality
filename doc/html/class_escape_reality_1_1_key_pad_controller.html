@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>EscapeReality: EscapeReality.KeyPadController Class Reference</title>
+<title>Escape Reality: EscapeReality.KeyPadController Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">EscapeReality
+   <div id="projectname">Escape Reality
    </div>
   </td>
  </tr>
@@ -82,8 +82,7 @@ Inheritance diagram for EscapeReality.KeyPadController:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6e30e7bdc47dd9ab164891963fa42b69"><td class="memItemLeft" align="right" valign="top"><a id="a6e30e7bdc47dd9ab164891963fa42b69"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>StonePressed</b> (int stoneNumber)</td></tr>
+<tr class="memitem:a6e30e7bdc47dd9ab164891963fa42b69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_escape_reality_1_1_key_pad_controller.html#a6e30e7bdc47dd9ab164891963fa42b69">StonePressed</a> (int stoneNumber)</td></tr>
 <tr class="separator:a6e30e7bdc47dd9ab164891963fa42b69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="events"></a>
@@ -92,6 +91,45 @@ Events</h2></td></tr>
 Action&#160;</td><td class="memItemRight" valign="bottom"><b>OnCorrectCode</b></td></tr>
 <tr class="separator:a374fc6430783b9413a89c3e88d7d6066"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A class for the behaviour of the <a class="el" href="class_escape_reality_1_1_key_pad_controller.html">KeyPadController</a>.</p>
+<p>Is used to check if the correct code is entered and invokes the OnCorrectCode event if thats the case. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6e30e7bdc47dd9ab164891963fa42b69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e30e7bdc47dd9ab164891963fa42b69">&#9670;&nbsp;</a></span>StonePressed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EscapeReality.KeyPadController.StonePressed </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>stoneNumber</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Calls UpdateInput(int number) and CheckCorrectCode().</p>
+<p>UpdateInput(int number) updates input list. Deletes one number before adding the passed one if length of input and password already match.</p>
+<p>CheckCorrectCode() compares input, password and invokes OnCorrectCode if they match.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stoneNumber</td><td>Number of the pressed shield. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>Assets/Scripts/KeyPadController.cs</li>
 </ul>

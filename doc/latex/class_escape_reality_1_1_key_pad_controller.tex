@@ -9,8 +9,7 @@ Inheritance diagram for Escape\+Reality.\+Key\+Pad\+Controller\+:\begin{figure}[
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_escape_reality_1_1_key_pad_controller_a6e30e7bdc47dd9ab164891963fa42b69}\label{class_escape_reality_1_1_key_pad_controller_a6e30e7bdc47dd9ab164891963fa42b69}} 
-void {\bfseries Stone\+Pressed} (int stone\+Number)
+void \mbox{\hyperlink{class_escape_reality_1_1_key_pad_controller_a6e30e7bdc47dd9ab164891963fa42b69}{Stone\+Pressed}} (int stone\+Number)
 \end{DoxyCompactItemize}
 \doxysubsection*{Events}
 \begin{DoxyCompactItemize}
@@ -18,6 +17,31 @@ void {\bfseries Stone\+Pressed} (int stone\+Number)
 \mbox{\Hypertarget{class_escape_reality_1_1_key_pad_controller_a374fc6430783b9413a89c3e88d7d6066}\label{class_escape_reality_1_1_key_pad_controller_a374fc6430783b9413a89c3e88d7d6066}} 
 Action {\bfseries On\+Correct\+Code}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for the behaviour of the \mbox{\hyperlink{class_escape_reality_1_1_key_pad_controller}{Key\+Pad\+Controller}}.
+
+Is used to check if the correct code is entered and invokes the On\+Correct\+Code event if thats the case. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_escape_reality_1_1_key_pad_controller_a6e30e7bdc47dd9ab164891963fa42b69}\label{class_escape_reality_1_1_key_pad_controller_a6e30e7bdc47dd9ab164891963fa42b69}} 
+\index{EscapeReality.KeyPadController@{EscapeReality.KeyPadController}!StonePressed@{StonePressed}}
+\index{StonePressed@{StonePressed}!EscapeReality.KeyPadController@{EscapeReality.KeyPadController}}
+\doxysubsubsection{\texorpdfstring{StonePressed()}{StonePressed()}}
+{\footnotesize\ttfamily void Escape\+Reality.\+Key\+Pad\+Controller.\+Stone\+Pressed (\begin{DoxyParamCaption}\item[{int}]{stone\+Number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calls Update\+Input(int number) and Check\+Correct\+Code().
+
+Update\+Input(int number) updates input list. Deletes one number before adding the passed one if length of input and password already match.
+
+Check\+Correct\+Code() compares input, password and invokes On\+Correct\+Code if they match.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stone\+Number} & Number of the pressed shield. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

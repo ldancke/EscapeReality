@@ -9,14 +9,11 @@ Inheritance diagram for Escape\+Reality.\+Game\+Manager\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_escape_reality_1_1_game_manager_a03969998b1dfeee8f7a2d022027f6d06}\label{class_escape_reality_1_1_game_manager_a03969998b1dfeee8f7a2d022027f6d06}} 
-void {\bfseries Game\+Start} ()
+void \mbox{\hyperlink{class_escape_reality_1_1_game_manager_a03969998b1dfeee8f7a2d022027f6d06}{Game\+Start}} ()
 \item 
-\mbox{\Hypertarget{class_escape_reality_1_1_game_manager_a236e265c18872505acd21e628ce176cb}\label{class_escape_reality_1_1_game_manager_a236e265c18872505acd21e628ce176cb}} 
-void {\bfseries Game\+Stop} ()
+void \mbox{\hyperlink{class_escape_reality_1_1_game_manager_a236e265c18872505acd21e628ce176cb}{Game\+Stop}} ()
 \item 
-\mbox{\Hypertarget{class_escape_reality_1_1_game_manager_a42f7ac732a1264a716508ddfc06d9e0d}\label{class_escape_reality_1_1_game_manager_a42f7ac732a1264a716508ddfc06d9e0d}} 
-void {\bfseries Reset\+Scene} ()
+void \mbox{\hyperlink{class_escape_reality_1_1_game_manager_a42f7ac732a1264a716508ddfc06d9e0d}{Reset\+Scene}} ()
 \item 
 \mbox{\Hypertarget{class_escape_reality_1_1_game_manager_ad12746b7b2270f9218798985eb5bde95}\label{class_escape_reality_1_1_game_manager_ad12746b7b2270f9218798985eb5bde95}} 
 void {\bfseries Bucket\+Quest\+Solved} ()
@@ -28,7 +25,7 @@ void {\bfseries Bucket\+Quest\+Solved} ()
 static \mbox{\hyperlink{class_escape_reality_1_1_game_manager}{Game\+Manager}} {\bfseries Instance}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
 \mbox{\Hypertarget{class_escape_reality_1_1_game_manager_a83d20641cc617adb7a9bbb7379ca3be4}\label{class_escape_reality_1_1_game_manager_a83d20641cc617adb7a9bbb7379ca3be4}} 
-Game\+State {\bfseries Game\+State}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\mbox{\hyperlink{namespace_escape_reality_a5e6bcacb43e44e4666ffb21feeaad47e}{Game\+State}} {\bfseries Game\+State}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
 \mbox{\Hypertarget{class_escape_reality_1_1_game_manager_a839fc37f070866049113faa82ff2f6e9}\label{class_escape_reality_1_1_game_manager_a839fc37f070866049113faa82ff2f6e9}} 
 \mbox{\hyperlink{class_escape_reality_1_1_time_tracker}{Time\+Tracker}} {\bfseries Time\+Tracker}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
@@ -45,16 +42,58 @@ Game\+State {\bfseries Game\+State}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}
 \doxysubsection*{Events}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_escape_reality_1_1_game_manager_ac9dce3b526677f10c99f45afd55636c0}\label{class_escape_reality_1_1_game_manager_ac9dce3b526677f10c99f45afd55636c0}} 
-Action {\bfseries On\+Game\+Start}
+Action \mbox{\hyperlink{class_escape_reality_1_1_game_manager_ac9dce3b526677f10c99f45afd55636c0}{On\+Game\+Start}}
 \item 
-\mbox{\Hypertarget{class_escape_reality_1_1_game_manager_aff5a48686fa46cbe71b4feef07cbe415}\label{class_escape_reality_1_1_game_manager_aff5a48686fa46cbe71b4feef07cbe415}} 
-Action {\bfseries On\+Game\+Stop}
+Action \mbox{\hyperlink{class_escape_reality_1_1_game_manager_aff5a48686fa46cbe71b4feef07cbe415}{On\+Game\+Stop}}
 \item 
-\mbox{\Hypertarget{class_escape_reality_1_1_game_manager_a050e8f4d297144aff0ddaf7374a200f7}\label{class_escape_reality_1_1_game_manager_a050e8f4d297144aff0ddaf7374a200f7}} 
-Action {\bfseries On\+Bucket\+Quest\+Solved}
+Action \mbox{\hyperlink{class_escape_reality_1_1_game_manager_a050e8f4d297144aff0ddaf7374a200f7}{On\+Bucket\+Quest\+Solved}}
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Singleton that keeps track of the game state, provides the utility to (re)start the game and serves as a registry for other Game\+Objects that carry out management tasks like the \mbox{\hyperlink{class_escape_reality_1_1_time_tracker}{Time\+Tracker}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_escape_reality_1_1_game_manager_a03969998b1dfeee8f7a2d022027f6d06}\label{class_escape_reality_1_1_game_manager_a03969998b1dfeee8f7a2d022027f6d06}} 
+\index{EscapeReality.GameManager@{EscapeReality.GameManager}!GameStart@{GameStart}}
+\index{GameStart@{GameStart}!EscapeReality.GameManager@{EscapeReality.GameManager}}
+\doxysubsubsection{\texorpdfstring{GameStart()}{GameStart()}}
+{\footnotesize\ttfamily void Escape\+Reality.\+Game\+Manager.\+Game\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Starts the game \mbox{\Hypertarget{class_escape_reality_1_1_game_manager_a236e265c18872505acd21e628ce176cb}\label{class_escape_reality_1_1_game_manager_a236e265c18872505acd21e628ce176cb}} 
+\index{EscapeReality.GameManager@{EscapeReality.GameManager}!GameStop@{GameStop}}
+\index{GameStop@{GameStop}!EscapeReality.GameManager@{EscapeReality.GameManager}}
+\doxysubsubsection{\texorpdfstring{GameStop()}{GameStop()}}
+{\footnotesize\ttfamily void Escape\+Reality.\+Game\+Manager.\+Game\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Stops the game \mbox{\Hypertarget{class_escape_reality_1_1_game_manager_a42f7ac732a1264a716508ddfc06d9e0d}\label{class_escape_reality_1_1_game_manager_a42f7ac732a1264a716508ddfc06d9e0d}} 
+\index{EscapeReality.GameManager@{EscapeReality.GameManager}!ResetScene@{ResetScene}}
+\index{ResetScene@{ResetScene}!EscapeReality.GameManager@{EscapeReality.GameManager}}
+\doxysubsubsection{\texorpdfstring{ResetScene()}{ResetScene()}}
+{\footnotesize\ttfamily void Escape\+Reality.\+Game\+Manager.\+Reset\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Resets the scene to the base state 
+
+\doxysubsection{Event Documentation}
+\mbox{\Hypertarget{class_escape_reality_1_1_game_manager_a050e8f4d297144aff0ddaf7374a200f7}\label{class_escape_reality_1_1_game_manager_a050e8f4d297144aff0ddaf7374a200f7}} 
+\index{EscapeReality.GameManager@{EscapeReality.GameManager}!OnBucketQuestSolved@{OnBucketQuestSolved}}
+\index{OnBucketQuestSolved@{OnBucketQuestSolved}!EscapeReality.GameManager@{EscapeReality.GameManager}}
+\doxysubsubsection{\texorpdfstring{OnBucketQuestSolved}{OnBucketQuestSolved}}
+{\footnotesize\ttfamily Action Escape\+Reality.\+Game\+Manager.\+On\+Bucket\+Quest\+Solved}
+
+Event that gets called when the Bucket\+Quest was solved -\/ should be refactored \mbox{\Hypertarget{class_escape_reality_1_1_game_manager_ac9dce3b526677f10c99f45afd55636c0}\label{class_escape_reality_1_1_game_manager_ac9dce3b526677f10c99f45afd55636c0}} 
+\index{EscapeReality.GameManager@{EscapeReality.GameManager}!OnGameStart@{OnGameStart}}
+\index{OnGameStart@{OnGameStart}!EscapeReality.GameManager@{EscapeReality.GameManager}}
+\doxysubsubsection{\texorpdfstring{OnGameStart}{OnGameStart}}
+{\footnotesize\ttfamily Action Escape\+Reality.\+Game\+Manager.\+On\+Game\+Start}
+
+Event that gets called when the game starts \mbox{\Hypertarget{class_escape_reality_1_1_game_manager_aff5a48686fa46cbe71b4feef07cbe415}\label{class_escape_reality_1_1_game_manager_aff5a48686fa46cbe71b4feef07cbe415}} 
+\index{EscapeReality.GameManager@{EscapeReality.GameManager}!OnGameStop@{OnGameStop}}
+\index{OnGameStop@{OnGameStop}!EscapeReality.GameManager@{EscapeReality.GameManager}}
+\doxysubsubsection{\texorpdfstring{OnGameStop}{OnGameStop}}
+{\footnotesize\ttfamily Action Escape\+Reality.\+Game\+Manager.\+On\+Game\+Stop}
+
+Event that gets called when the game stops 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
