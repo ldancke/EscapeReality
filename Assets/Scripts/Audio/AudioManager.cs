@@ -8,8 +8,14 @@ using UnityEngine;
 */
 public class AudioManager : MonoBehaviour
 {
+    /**
+    * @see Sound
+    */
     public Sound[] sounds;
 
+    /**
+    * AudioManager instance
+    */
     public static AudioManager instance;
 
     /**

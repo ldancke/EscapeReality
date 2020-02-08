@@ -25,7 +25,7 @@ namespace EscapeReality {
         private void Awake() => this.input = new List<int>();
 
         /**
-         * Compares input and password and invokes OnCorrectCode if they match.
+         * Compares input, password and invokes OnCorrectCode if they match.
          * 
          */
         private void CheckCorrectCode()
@@ -54,7 +54,12 @@ namespace EscapeReality {
         }
 
         /**
-         * Calls UpdateInput() and CheckCorrectCode().
+         * Calls UpdateInput(int number) and CheckCorrectCode().
+         * 
+         * UpdateInput(int number) updates input list.
+         * Deletes one number before adding the passed one if length of input and password already match.
+         * 
+         * CheckCorrectCode() compares input, password and invokes OnCorrectCode if they match.
          * 
          * @param stoneNumber Number of the pressed shield.
          */

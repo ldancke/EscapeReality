@@ -11,8 +11,10 @@ using UnityEngine;
 [System.Serializable]
 public class Sound
 {
+    //* Name of the soundfile
     public string name;
 
+    //* Soundfile
     public AudioClip clip;
 
     //* Slider for volume control
